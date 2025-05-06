@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 
-Public Class Form1
+Public Class NAWLG
 
     ' Ruta del archivo donde se guardará el país seleccionado
     Private Const SelectedCountryFilePath As String = "selected_country.txt"
@@ -307,7 +307,7 @@ Public Class Form1
     ' Generar el enlace de WhatsApp
     Private Sub GenerateLink(sender As Object, e As EventArgs) Handles bt_genLink.Click
         Dim selectedCountry As Country = CType(cb_country.SelectedItem, Country)
-        Dim telefono As String = tb_tel.Text.Replace(" ", "")
+        Dim telefono As String = tb_tel.Text
         If Len(Trim(telefono)) > 0 Then
             Dim enlace As String = "https://wa.me/" & selectedCountry.PhoneCode & telefono
             Process.Start("chrome.exe", enlace)
@@ -318,9 +318,5 @@ Public Class Form1
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
-    End Sub
-
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Process.Start("https://www.linkedin.com/in/asaztic/")
     End Sub
 End Class
