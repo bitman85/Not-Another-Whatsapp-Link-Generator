@@ -24,7 +24,7 @@ Public Class Form1
         End Function
     End Class
 
-    Public Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Crear una lista de países con sus prefijos telefónicos
         Dim countries As New List(Of Country) From {
             New Country("Afghanistan", "93"),
@@ -322,5 +322,9 @@ Public Class Form1
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Process.Start("https://www.linkedin.com/in/asaztic/")
+    End Sub
+
+    Private Sub tb_tel_TextChanged(sender As Object, e As EventArgs) Handles tb_tel.TextChanged
+
     End Sub
 End Class
